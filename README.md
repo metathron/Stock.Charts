@@ -1,6 +1,6 @@
 # Stock.Indicators NuGet package Demo
 
-[![Build status](https://dev.azure.com/skender/Stock.Indicators/_apis/build/status/Stock.Charts)](https://dev.azure.com/skender/Stock.Indicators/_build/latest?definitionId=19)
+[![Build status](https://dev.azure.com/skender/Stock.Indicators/_apis/build/status/Stock.Charts)](https://dev.azure.com/skender/Stock.Indicators/_build/latest?definitionId=23)
 
 This is a demo for use of the [Skender.Stock.Indicators](https://www.nuget.org/packages/Skender.Stock.Indicators) NuGet package.  It is an Angular website with a .NET Web API that auto generates a stock chart.  You can add and remove indicators on the fly, to the chart.  Only a few sample indicators are shown in this demo.  See the [Library documentation](https://daveskender.github.io/Stock.Indicators) for more information and a full list of available indicators.
 
@@ -21,9 +21,20 @@ If you want to host yourself on your local computer and review the source code, 
 
 2. Open `\Server\Backend.sln` in Visual Studio
 
-3. Select `WebApi` project and Run by either `CTRL+F5` or `CTRL+SHIFT+W`.  You can also View from right-click menus.  If you've done this successfully, a browser window will open and say "API is functioning nominally."  Leave the browser window open.
+3. Select `WebApi` project and Run by either `CTRL+F5` or `CTRL+SHIFT+W`.  You can also View from right-click menus.  If you've done this successfully, a browser window will open and say "API is functioning nominally."  Leave the browser window open.  Take note of the URL in your browser, or from the Debug menu in WebApi project properties.
 
-4. Open `Git Bash` window and navigate to the `\Client` folder
+    ![WebApi Properties ><](Client/src/assets/server-port.png)
+
+4. Open `Client\src\environments\environment.ts` and modify the API URL if needed, then save file.
+
+    ```ts
+    export const env: EnvConfig = {
+      production: false,
+      api: 'https://localhost:44392'
+    };
+    ```
+
+5. Open `Git Bash` window and navigate to the `\Client` folder
 
     ``` bash
     npm install
