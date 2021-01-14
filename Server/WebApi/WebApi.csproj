@@ -9,7 +9,13 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Skender.Stock.Indicators" Version="1.3.0" />
+    <PackageReference Include="Skender.Stock.Indicators" Version="1.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Stock.Indicators\CandleStickPatterns\CandleStickPatterns.csproj" />
+    <ProjectReference Include="..\..\..\Stock.Indicators\indicators\Indicators.csproj" />
+    <ProjectReference Include="..\BinanceConnector\BinanceConnector.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -68,5 +68,6 @@ namespace WebApi.Controllers
             IEnumerable<Quote> history = HistoryService.GetHistory();
             return Indicator.GetRsi(history, lookbackPeriod);
         }
+
     }
 }
