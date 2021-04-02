@@ -20,11 +20,11 @@ namespace WebApi.Services
             {
 
                 if (from == null)
-                    from = DateTime.Now.AddDays(-30);
+                    from = DateTime.Now.AddDays(-30 * (int)interval);
                 if (to == null)
                     to = DateTime.Now;
 
-                h = BinanceConnector.Spot.GetChartData("BTCUSDT", interval, from.Value, to.Value);
+                h = BinanceConnector.Spot.GetChartData(pair, interval, from.Value, to.Value);
             }
 
             return h;

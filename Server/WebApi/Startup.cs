@@ -48,11 +48,14 @@ namespace WebApi
                 app.UseHsts();
             }
             app.UseRouting();
-            app.UseCors("CorsPolicy");
+           // app.UseCors("CorsPolicy");
+            app.UseCors(
+     options => { options.AllowAnyOrigin(); options.AllowAnyHeader(); options.AllowAnyMethod(); }
+     );
+
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers()
-                  .RequireCors("CorsPolicy");  // on all controllers;
+                endpoints.MapControllers();
             });
         }
     }
